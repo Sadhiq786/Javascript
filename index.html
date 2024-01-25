@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="font-family: century gothic;">
+
+
+    <script>
+      
+        var container = document.createElement("div");
+        container.style.border = "2px solid black";
+        container.style.width = "50%";
+        container.style.height = "1400px";
+        container.style.margin = "auto";
+        container.style.padding = "10px";
+        container.style.backgroundColor = "LightSteelBlue";
+
+        
+        // name
+        var Name = document.createElement("h1");
+        Name.innerText = "Shaik Sadhiq";
+        Name.style.textAlign = "left";
+        Name.style.fontFamily = "century gothic";
+        Name.style.fontSize = "40px";
+
+        // phone
+        var phone = document.createElement("h2");
+        phone.innerText = "Phone: +91 7013193397";
+        phone.style.textAlign = "left";
+        phone.style.fontFamily = "century gothic";
+        phone.style.fontSize = "20px";
+        phone.style.marginTop = "-12px";
+
+        // email
+        var email = document.createElement("h2");
+        email.innerText = "Email: sksadhiqsksadhiq@gmail.com";
+        email.style.textAlign = "left";
+        email.style.fontFamily = "century gothic";
+        email.style.fontSize = "20px";
+        email.style.margintop = "-10px";
+        
+        // image
+        var image = document.createElement("img");
+        image.setAttribute("src", "./Passport-photo.JPG")
+        image.style.width = "140px";
+        image.style.height = "170px";
+        image.style.border = "1px solid black";
+        image.style.position = "absolute";
+        image.style.top = "20px";
+        image.style.right = "390px";
+
+        // line
+        var line = document.createElement("hr");
+        line.style.border = "1px solid black";
+        line.style.backgroundColor = "black";
+
+        
+        
+        // main part
+
+        // career objective
+        function createFieldset(legendText, contentText) {
+            var fieldset = document.createElement("fieldset");
+            fieldset.style.position = "absolute";
+            fieldset.style.width = "47.5%";
+            fieldset.style.fontWeight = "bolder";
+            fieldset.style.backgroundColor = "white"
+            fieldset.style.top = "220px";
+
+            var legend = document.createElement("legend");
+            legend.innerText = legendText;
+            legend.style.border = "1px solid black";
+            legend.style.textAlign = "center";
+            legend.style.fontWeight = "bolder";
+            legend.style.padding = "5px";
+            legend.style.backgroundColor = "white";
+
+            var content = document.createElement("p");
+            content.innerText = contentText;
+
+            fieldset.appendChild(legend);
+            fieldset.appendChild(content);
+
+            return fieldset;
+        }
+
+        // career objective content
+        var careerFieldset = createFieldset("Career Objective", "To be a part of an enthusiastic work environment, where I can enhance my knowledge and apply my technical skills to accomplish organizational goals.");
+        careerFieldset.style.fontStyle = "italic";
+
+        //education
+        var education = createFieldset("Education","");
+        education.style.marginTop = "140px"
+        var educationcontent = document.createElement("ul");
+    
+        var classes = ["M.Sc in (Computer Science) from Bhavans Vivekananda College", "B.Sc in (Computer Science) from MNR Degree College", "Intermediate in (MPC) from Sri Gayatri Junior College", "SSC from Sri Gayatri High School"];
+        for(i=0; i<classes.length; i++)
+        {
+            var classlist = document.createElement("li");
+            classlist.innerText = classes[i];
+            classlist.style.margin = "14px";
+            educationcontent.appendChild(classlist);
+        }
+
+        // technical skills
+        var techskills = createFieldset("Technical Skills", "")
+        techskills.style.marginTop ="360px";
+        skill_Ulist = document.createElement("ul"); 
+
+        var listofskills = ["JavaScript","MySQL","HTML & CSS", "Bootstrap", "Github"];
+       for(j=0; j<listofskills.length; j++)
+        {
+            var skill_list = document.createElement("li");
+            skill_list.innerText = listofskills[j];
+            skill_list.style.margin = "14px";
+            skill_Ulist.appendChild(skill_list);
+        }
+
+
+        // projects
+        var projects = createFieldset("Projects", "");
+        projects.style.marginTop = "610px";
+
+        projectsTag = document.createElement("ul");
+        projectsTag.setAttribute("type","circle")
+
+        projects_list = ["Tourism Managemnet System", "Photography Portfolio","Attendance Management System"];
+        for(i=0; i<projects_list.length; i++)
+        {
+            var listofpro = document.createElement("li");
+            listofpro.innerText = projects_list[i];
+            listofpro.style.margin = "14px";
+            projectsTag.appendChild(listofpro);
+        }
+
+
+        // hobbies
+        hobbies=createFieldset("Hobbies", "")
+        hobbies.style.marginTop = "790px";
+
+        var hobbiesoflist = document.createElement("ul");
+        hobbiesoflist.setAttribute("type", "square")
+
+        var hobbieslist = ["Playing Cricket","Playing Volley Ball", "Watching Movies"];
+        for(i=0; i<hobbieslist.length; i++)
+        {
+            var list_of_hobbies = document.createElement("li");
+            list_of_hobbies.innerText = hobbieslist[i];
+            list_of_hobbies.style.margin = "14px"
+            hobbiesoflist.appendChild(list_of_hobbies);
+        }
+        
+
+        // Declaration
+        var declaration = createFieldset("Declaration","");
+        declaration.style.marginTop = "970px";
+        declaration.style.height = "150px"
+
+        var declaration_content = document.createElement("i"); 
+        declaration_content.innerText = "I hereby assure that the above mentioned information is true to the best of my knowledge.";
+
+        var sign = document.createElement("b");
+        sign.innerText = "(Shaik Sadhiq)";
+        sign.style.float = "right";
+        sign.style.marginTop = "40px";
+        sign.style.marginRight = "50px"
+
+
+        // download
+        var download = document.createElement("a")
+        download.setAttribute("href","./Resume.png")
+        download.setAttribute("download","");
+        download.style.marginLeft = "40%";
+
+        var button = document.createElement("button");
+        button.innerText = "Download Resume";
+        button.style.marginTop = "1170px";
+        button.style.padding = "10px";
+
+
+
+        // appending
+        document.body.appendChild(container);
+        container.appendChild(Name);
+        container.appendChild(image);
+        container.appendChild(phone);
+        container.appendChild(email);
+        container.appendChild(line); 
+
+        container.appendChild(careerFieldset);
+
+        container.appendChild(education);
+        education.appendChild(educationcontent);
+
+        container.appendChild(techskills);
+        techskills.appendChild(skill_Ulist);
+
+        container.appendChild(projects);
+        projects.appendChild(projectsTag);
+
+        container.appendChild(hobbies);
+        hobbies.appendChild(hobbiesoflist);
+
+        container.appendChild(declaration);
+        declaration.appendChild(declaration_content);
+        declaration.appendChild(sign)
+
+        container.appendChild(download);
+        download.appendChild(button);
+
+        // container.appendChild(fieldset);
+        // fieldset.appendChild(legend);
+        // fieldset.appendChild(careercontent);
+
+
+
+     </script>
+</body>
+</html>
